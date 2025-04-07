@@ -2,8 +2,8 @@ import allure
 import requests
 
 from config.headers import Headers
-from servives.service_1.payloads import Payloads
-from servives.service_1.endpoints import Endpoints
+from servives.service_pets.payloads import Payloads
+from servives.service_pets.endpoints import Endpoints
 
 from utils.helper import Helper
 

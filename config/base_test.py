@@ -1,4 +1,4 @@
-from servives.service_1.api_users import UsersAPI
+from servives.service_pets.api_users import UsersAPI
 
 
 class BaseTest():

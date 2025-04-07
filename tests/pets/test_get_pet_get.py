@@ -3,7 +3,7 @@ import json
 import pytest
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_get_pet_get():
     url = "https://petstore.swagger.io/v2/pet/7717"
 
