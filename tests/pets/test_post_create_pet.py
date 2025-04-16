@@ -46,8 +46,8 @@ class TestPositive:
 
         print('\n метод GET')
         UsersAPI.get_user_id(user_id)
-        time.sleep(2)
-        UsersAPI.get_user_id(user_id)
+        # time.sleep(2)
+        # UsersAPI.get_user_id(user_id)
 
         # print(result_get1.status_code)
         # print(result_get1.text)
