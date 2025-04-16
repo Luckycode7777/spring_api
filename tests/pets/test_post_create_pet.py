@@ -1,13 +1,12 @@
 import allure
+import time
 
-from config.base_test import BaseTest
 from allure_commons.types import Severity
-import requests
-import json
+from servives.service_pets.api_users import UsersAPI
 
 
 @allure.epic('Pets')
-class TestPositive(BaseTest):  # наследуем тестовый класс от BaseTest
+class TestPositive:  # наследуем тестовый класс от BaseTest
 
     @allure.tag('api')
     @allure.severity(Severity.CRITICAL)
@@ -22,9 +21,13 @@ class TestPositive(BaseTest):  # наследуем тестовый класс 
         # allure.dynamic.feature('Задачи в репозитории')
         # allure.dynamic.story('Создание нового юзера')
         # allure.dynamic.title('Greate new user')
-        self.api_users.create_user()
+        print('\n метод POST')
+        result_post = UsersAPI.create_user()
+        check_post = result_post.json()
+        print(f'CHECK POST **>> {check_post}')
         print('\n TEST END GOOD ************')
-
+        user_id = check_post.get('id')
+        print(f'USER ID **>> {user_id}')
         # log = f"""
         # REQUEST:
         #     URL: {response.request.url}
@@ -40,3 +43,13 @@ class TestPositive(BaseTest):  # наследуем тестовый класс 
         # assert response.status_code == 200
         # assert response.json()['id'] == 7717
         # assert response.json()['name'] == "Mars"
+
+        print('\n метод GET')
+        UsersAPI.get_user_id(user_id)
+        time.sleep(2)
+        UsersAPI.get_user_id(user_id)
+
+        # print(result_get1.status_code)
+        # print(result_get1.text)
+
+

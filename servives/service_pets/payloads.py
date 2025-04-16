@@ -1,16 +1,16 @@
 import random
 
 from faker import Faker
-from random import randint
 
 faker = Faker()  # создали объект класса Faker
 
 
 class Payloads:
 
-    def create_user(self):
+    @staticmethod
+    def json_create_user():
         ids = random.randint(100, 10000)
-        return {
+        json_user = {
             "id": ids,
             "category": {
                 "id": 17,
@@ -21,6 +21,6 @@ class Payloads:
                 "https://goo.su/qTF5qa0"
             ]
         }
+        return json_user
 
 
-print(Payloads().create_user())

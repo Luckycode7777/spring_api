@@ -1,9 +1,9 @@
-from servives.service_pets.api_users import UsersAPI
-
-
-class BaseTest():
-    """Инициализация всех объектов папки serviсes"""
-    def setup_method(self):
-        self.api_users = UsersAPI()
+# from servives.service_pets.api_users import UsersAPI
+#
+#
+# class BaseTest:
+#     """Инициализация всех объектов папки serviсes"""
+#     def setup_method(self):
+#         self.api_users = UsersAPI()
 
 

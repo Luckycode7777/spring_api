@@ -22,8 +22,8 @@ response = {
 
 user = UserModel(**response)
 
-class Model(BaseModel):
-    __root__: int[int, Data]
-
-
-print(Model.parse_obj(sample))
+# class Model(BaseModel):
+#     __root__: int[int, Data]
+#
+#
+# print(Model.parse_obj(sample))

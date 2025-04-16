@@ -7,7 +7,7 @@ load_dotenv()
 class Headers:
 
     basic_headers = {
-        'accept': '*/*',
+        # 'accept': '*/*',
         'Content-Type': 'application/json'
     }
 
