@@ -5,9 +5,9 @@ from pprint import pprint
 import allure
 import requests
 
-from servives.service_pets.http_methods_pet import HttpMethods
-from servives.service_pets.endpoints import Endpoints
-from servives.service_pets.payloads import Payloads
+from services.service_pets.http_methods_pet import HttpMethods
+from services.service_pets.endpoints import Endpoints
+from services.service_pets.payloads import Payloads
 from utils.headers import Headers
 from utils.helper import Helper
 

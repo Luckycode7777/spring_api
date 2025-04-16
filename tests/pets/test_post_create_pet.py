@@ -2,11 +2,11 @@ import allure
 import time
 
 from allure_commons.types import Severity
-from servives.service_pets.api_users import UsersAPI
+from services.service_pets.api_users import UsersAPI
 
 
 @allure.epic('Pets')
-class TestPositive:  # наследуем тестовый класс от BaseTest
+class TestPositive:
 
     @allure.tag('api')
     @allure.severity(Severity.CRITICAL)

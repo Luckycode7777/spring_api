@@ -1,6 +1,6 @@
 from pprint import pprint
 
-from servives.service_google_map.api_google_maps import GoogleMapsAPI
+from services.service_google_map.api_google_maps import GoogleMapsAPI
 import requests
 
 """Создание, изменение, удаление новой локации"""

@@ -2,9 +2,9 @@ from pprint import pprint
 
 import requests
 
-from servives.service_google_map.http_methods import HttpMethods
-from servives.service_google_map.endpoints import Endpoints
-from servives.service_google_map.payloads import Payloads
+from services.service_google_map.http_methods import HttpMethods
+from services.service_google_map.endpoints import Endpoints
+from services.service_google_map.payloads import Payloads
 
 """Методы для тестирования Google maps api"""
 

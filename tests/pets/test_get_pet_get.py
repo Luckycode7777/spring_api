@@ -2,7 +2,7 @@ import requests
 import json
 import pytest
 
-from servives.service_pets.api_users import UsersAPI
+from services.service_pets.api_users import UsersAPI
 
 # from servives.service_pets.api_users import
 
