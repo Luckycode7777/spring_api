@@ -17,7 +17,8 @@ class TestCreatePlace:
         print('\nметод GET')
         result_get = GoogleMapsAPI.get_new_place(place_id)
         print(result_get.status_code)
-        print('***' * 20)
+
+        print('\nметод DELETE')
         result_delete = GoogleMapsAPI.delete_new_place(place_id)
         print(result_delete.status_code)
 
