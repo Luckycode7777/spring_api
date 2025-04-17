@@ -1,5 +1,3 @@
-
-
 class Payloads:
 
     @staticmethod
@@ -21,3 +19,10 @@ class Payloads:
             "language": "French-IN"
         }
         return json_place
+
+    @staticmethod
+    def json_delete_place(place_id):
+        json_del_place = {
+            "place_id": place_id
+        }
+        return json_del_place

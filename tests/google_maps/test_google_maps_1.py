@@ -11,9 +11,13 @@ class TestCreatePlace:
         result_post = GoogleMapsAPI.create_new_place()
         check_post = result_post.json()
         print(check_post)
-        place_id = check_post.get('place_id')
+        place_id = check_post.get('place_id', 'Такого ключа нет')
         print(f'PLACE ID **>> {place_id}')
 
         print('\nметод GET')
         result_get = GoogleMapsAPI.get_new_place(place_id)
         print(result_get.status_code)
+        print('***' * 20)
+        result_delete = GoogleMapsAPI.delete_new_place(place_id)
+        print(result_delete.status_code)
+

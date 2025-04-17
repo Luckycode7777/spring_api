@@ -26,7 +26,7 @@ class TestPositive:
         check_post = result_post.json()
         print(f'CHECK POST **>> {check_post}')
         print('\n TEST END GOOD ************')
-        user_id = check_post.get('id')
+        user_id = check_post.get('id', 'Такого ключа нет')
         print(f'USER ID **>> {user_id}')
         # log = f"""
         # REQUEST:

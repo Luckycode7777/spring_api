@@ -54,6 +54,8 @@ class UsersAPI:
         result_get = HttpMethods.get(get_url)
         if result_get.status_code == 404:
             result_get = HttpMethods.get(get_url)
+            if result_get.status_code == 404:
+                result_get = HttpMethods.get(get_url)
         print(result_get.url)
         print(result_get.status_code)
         print(result_get.text)

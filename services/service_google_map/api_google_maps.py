@@ -31,7 +31,7 @@ class GoogleMapsAPI:
         return result_post
 
 
-    """Метода для проверки новой локации"""
+    """Метод для проверки новой локации"""
     @staticmethod
     def get_new_place(place_id):
         base_url = Endpoints.base_url  # базовый урл
@@ -43,3 +43,19 @@ class GoogleMapsAPI:
         result_get = HttpMethods.get(get_url)
         pprint(result_get.text)
         return result_get
+
+
+    """Метод для удаления локации"""
+    @staticmethod
+    def delete_new_place(place_id):
+        base_url = Endpoints.base_url
+        endpoint_delete = Endpoints.resource_delete
+        key = Endpoints.key
+
+        delete_url = f'{base_url}{endpoint_delete}{key}'
+        print(delete_url)
+        result_delete = HttpMethods.delete(delete_url, Payloads.json_delete_place(place_id))
+        print(result_delete)
+        return result_delete
+
+
