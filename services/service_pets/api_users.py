@@ -2,7 +2,7 @@ import time
 
 import allure
 
-from config.http_methods import HttpMethods
+from utils.http_methods import HttpMethods
 from services.service_pets.endpoints import Endpoints
 from services.service_pets.payloads import Payloads
 from utils.headers import Headers
@@ -53,8 +53,8 @@ class UsersAPI:
             if result_get.status_code == 404:
                 result_get = HttpMethods.get(get_url)
         print(result_get.url)
-        print(result_get.status_code)
-        print(result_get.text)
+        # print(result_get.status_code)
+        # print(result_get.text)
         return result_get
 
     """Удаление нового пользователя"""

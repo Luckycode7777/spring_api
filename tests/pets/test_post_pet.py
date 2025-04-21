@@ -2,6 +2,7 @@ import allure
 import time
 
 from allure_commons.types import Severity
+from utils.cheking import Checking
 from services.service_pets.api_users import UsersAPI
 
 
@@ -28,6 +29,7 @@ class TestPositive:
         print('\n TEST END GOOD ************')
         user_id = check_post.get('id', 'Такого ключа нет')
         print(f'USER ID **>> {user_id}')
+        Checking.checking_status_code(result_post, 200)
         # log = f"""
         # REQUEST:
         #     URL: {response.request.url}
@@ -45,14 +47,14 @@ class TestPositive:
         # assert response.json()['name'] == "Mars"
 
         print('\n метод GET')
-        UsersAPI.get_user_id(user_id)
-        # time.sleep(2)
-        # UsersAPI.get_user_id(user_id)
-
-        # print(result_get1.status_code)
-        # print(result_get1.text)
+        result_get = UsersAPI.get_user_id(user_id)
+        Checking.checking_status_code(result_get, 200)
 
         print('\n метод DELETE')
-        UsersAPI.delete_nem_user(user_id)
+        result_delete = UsersAPI.delete_nem_user(user_id)
+        Checking.checking_status_code(result_delete, 200)
 
+        print('\n метод GET DELETE')
+        result_get = UsersAPI.get_user_id(user_id)
+        Checking.checking_status_code(result_get, 404)
 

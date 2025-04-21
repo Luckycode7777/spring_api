@@ -10,20 +10,20 @@ class HttpMethods:
 
     @staticmethod
     def get(url):
-        result = requests.get(url, headers=Headers.basic_headers, cookies=Cookie.cookie_google_maps)
+        result = requests.get(url, headers=Headers.basic_headers, cookies=Cookie.cookie)
         return result
 
     @staticmethod
     def post(url, body):
-        result = requests.post(url, json=body, headers=Headers.basic_headers, cookies=Cookie.cookie_google_maps)
+        result = requests.post(url, json=body, headers=Headers.basic_headers, cookies=Cookie.cookie)
         return result
 
     @staticmethod
     def put(url, body):
-        result = requests.put(url, json=body, headers=Headers.basic_headers, cookies=Cookie.cookie_google_maps)
+        result = requests.put(url, json=body, headers=Headers.basic_headers, cookies=Cookie.cookie)
         return result
 
     @staticmethod
     def delete(url, body):
-        result = requests.delete(url, json=body, headers=Headers.basic_headers, cookies=Cookie.cookie_google_maps)
+        result = requests.delete(url, json=body, headers=Headers.basic_headers, cookies=Cookie.cookie)
         return result

@@ -1,8 +1,7 @@
 from pprint import pprint
 
-import requests
-
-from config.http_methods import HttpMethods
+from utils.http_methods import HttpMethods
+# from utils.cheking import Checking
 from services.service_google_map.endpoints import Endpoints
 from services.service_google_map.payloads import Payloads
 
@@ -14,6 +13,7 @@ class GoogleMapsAPI:
         # self.headers = Headers()
         self.endpoints = Endpoints()
         self.payloads = Payloads()
+        # self.checking = Checking()
 
     """Метода для создания новой локации"""
     @staticmethod
@@ -25,9 +25,9 @@ class GoogleMapsAPI:
 
         post_urt = f'{base_url}{endpoint_post}{key}'
         print(post_urt)
-
         result_post = HttpMethods.post(post_urt, json_for_create_new_place)
-        print(result_post.text)
+        print(f'+++> result_post.text - {result_post.text}')
+        print(f'+++> result_post - {result_post.status_code}')
         return result_post
 
     """Метод для проверки новой локации"""
@@ -53,7 +53,7 @@ class GoogleMapsAPI:
         delete_url = f'{base_url}{endpoint_delete}{key}'
         print(delete_url)
         result_delete = HttpMethods.delete(delete_url, Payloads.json_delete_place(place_id))
-        print(result_delete)
+        print(result_delete.text)
         return result_delete
 
 
