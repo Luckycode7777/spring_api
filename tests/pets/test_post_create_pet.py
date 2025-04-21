@@ -52,4 +52,7 @@ class TestPositive:
         # print(result_get1.status_code)
         # print(result_get1.text)
 
+        print('\n метод DELETE')
+        UsersAPI.delete_nem_user(user_id)
+
 

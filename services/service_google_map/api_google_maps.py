@@ -2,7 +2,7 @@ from pprint import pprint
 
 import requests
 
-from services.service_google_map.http_methods import HttpMethods
+from config.http_methods import HttpMethods
 from services.service_google_map.endpoints import Endpoints
 from services.service_google_map.payloads import Payloads
 
@@ -30,7 +30,6 @@ class GoogleMapsAPI:
         print(result_post.text)
         return result_post
 
-
     """Метод для проверки новой локации"""
     @staticmethod
     def get_new_place(place_id):
@@ -43,7 +42,6 @@ class GoogleMapsAPI:
         result_get = HttpMethods.get(get_url)
         pprint(result_get.text)
         return result_get
-
 
     """Метод для удаления локации"""
     @staticmethod

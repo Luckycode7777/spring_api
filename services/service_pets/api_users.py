@@ -1,15 +1,11 @@
-import json
 import time
-from pprint import pprint
 
 import allure
-import requests
 
-from services.service_pets.http_methods_pet import HttpMethods
+from config.http_methods import HttpMethods
 from services.service_pets.endpoints import Endpoints
 from services.service_pets.payloads import Payloads
 from utils.headers import Headers
-from utils.helper import Helper
 
 
 class UsersAPI:
@@ -60,5 +56,18 @@ class UsersAPI:
         print(result_get.status_code)
         print(result_get.text)
         return result_get
+
+    """Удаление нового пользователя"""
+    @staticmethod
+    def delete_nem_user(user_id):
+        base_url = Endpoints.base_url
+
+        delete_url = f'{base_url}{user_id}'
+        result_delete = HttpMethods.delete(delete_url, body=None)
+        print(delete_url)
+        print(result_delete.status_code)
+        print(result_delete.text)
+        # print(result_delete.json())
+        return result_delete
 
 
