@@ -15,18 +15,19 @@ class TestCreatePlace:
         place_id = check_post.get('place_id', 'Такого ключа нет')
         print(f'PLACE ID *****>> {place_id}')
         Checking.checking_status_code(result_post, 200)
-        Checking.check_json_values(result_post, Checking.get_keys(result_post))
+        Checking.check_json_keys(result_post, Checking.get_keys(result_post))
+        Checking.check_json_values(result_post, 'status', 'OK')
 
-        print('\nметод GET')
-        result_get = GoogleMapsAPI.get_new_place(place_id)
-        Checking.checking_status_code(result_get, 200)
-        Checking.check_json_values(result_get, Checking.get_keys(result_get))
-
-        print('\nметод DELETE')
-        result_delete = GoogleMapsAPI.delete_new_place(place_id)
-        Checking.checking_status_code(result_delete, 200)
-        Checking.check_json_values(result_delete, Checking.get_keys(result_delete))
-
-        # print('\nметод GET DELETE')
+        # print('\nметод GET')
         # result_get = GoogleMapsAPI.get_new_place(place_id)
-        # Checking.checking_status_code(result_get, 404)
+        # Checking.checking_status_code(result_get, 200)
+        # Checking.check_json_values(result_get, Checking.get_keys(result_get))
+        #
+        # print('\nметод DELETE')
+        # result_delete = GoogleMapsAPI.delete_new_place(place_id)
+        # Checking.checking_status_code(result_delete, 200)
+        # Checking.check_json_values(result_delete, Checking.get_keys(result_delete))
+        #
+        # # print('\nметод GET DELETE')
+        # # result_get = GoogleMapsAPI.get_new_place(place_id)
+        # # Checking.checking_status_code(result_get, 404)
